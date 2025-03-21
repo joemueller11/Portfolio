@@ -35,7 +35,7 @@ body {
 
 main {
   flex: 1;
-  padding: 2rem;
+  padding: clamp(1rem, 3vw, 2rem);
 }
 
 nav {
@@ -46,8 +46,8 @@ nav {
 
 .projects {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(1rem, 3vw, 2rem);
 }
 
 body {
@@ -59,8 +59,12 @@ body {
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: clamp(2rem, 5vw, 3.2em);
   line-height: 1.1;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 4vw, 2.4em);
 }
 
 button {
@@ -84,9 +88,9 @@ button:focus-visible {
 
 /* Form Styles */
 .contact-form {
-  max-width: 600px;
-  margin: 2rem auto;
-  padding: 2rem;
+  max-width: min(600px, 90%);
+  margin: 1rem auto;
+  padding: clamp(1rem, 3vw, 2rem);
   background: rgba(255, 255, 255, 0.05);
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -146,6 +150,48 @@ button:focus-visible {
 
 .submit-button:active {
   transform: translateY(1px);
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: clamp(1rem, 3vw, 2rem);
+  text-align: center;
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--background-color);
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .nav-menu.open {
+    display: flex;
+  }
+
+  .project img {
+    width: 100% !important;
+  }
 }
 
 @media (prefers-color-scheme: light) {
