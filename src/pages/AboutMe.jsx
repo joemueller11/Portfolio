@@ -1,7 +1,8 @@
 function AboutMe() {
   return (
     <section className="about-me">
-      <h2>About Me</h2> 
+      <h2>About Me</h2>
+      <h3>Joseph Mueller</h3> 
       <img 
         src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
         alt="placeholder" 

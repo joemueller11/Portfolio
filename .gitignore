@@ -17,6 +17,8 @@ dist-ssr
 !.vscode/extensions.json
 .idea
 .DS_Store
+
+# These might be unnecessary depending on your development setup:
 *.suo
 *.ntvs*
 *.njsproj

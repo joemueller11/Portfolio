@@ -21,6 +21,46 @@ a {
 a:hover {
   color: #535bf2;
 }
+.header{
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-end;
+  width: 100%;
+  height: 70vh;  /* Changed from 100vh to 70vh */
+  min-height: 280px;  /* Adjusted from 400px to 280px */
+  max-height: 70vh;  /* Changed from 100vh to 70vh */
+  min-width: 300px;
+  color: #eee;
+  border-radius: 0 0 20px 20px;
+  text-shadow: 0 2px 6px #000a;
+}
+.header:after{
+  content:"";
+  width:100%;
+  height:100%;
+  position:absolute;
+  bottom:0;
+  left:0;
+  z-index:-1;
+ background: linear-gradient(to bottom, rgba(0,0,0,0.12) 40%,rgba(27,32,48,1) 100%);
+}
+.header:before{
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #1B2030 url(https://images.unsplash.com/photo-1479030048010-33d345bb94f9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) center center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  transition: all 0.4s ease-in-out;
+  z-index: -2;
+}
 
 body {
   margin: 0;
@@ -38,10 +78,15 @@ main {
   padding: clamp(1rem, 3vw, 2rem);
 }
 
+/* Update navigation styles */
 nav {
   display: flex;
   gap: 1rem;
   padding: 1rem;
+  border: 2px solid #646cff;
+  border-radius: 8px;
+  margin: 1rem;
+  position: relative; /* Add this */
 }
 
 .projects {
@@ -86,6 +131,12 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+/* Add global image styles rounded borders */
+img {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
 /* Form Styles */
 .contact-form {
   max-width: min(600px, 90%);
@@ -117,6 +168,7 @@ button:focus-visible {
   color: inherit;
   font-size: 1rem;
   transition: border-color 0.3s, box-shadow 0.3s;
+  box-sizing: border-box;
 }
 
 .form-group input:focus,
@@ -166,23 +218,36 @@ button:focus-visible {
   border: none;
   cursor: pointer;
   padding: 0.5rem;
+  position: relative; 
+  z-index: 2; 
 }
 
 @media (max-width: 768px) {
+  nav {
+    position: relative;
+  }
+
   .hamburger {
     display: block;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    z-index: 2;
   }
 
   .nav-menu {
     display: none;
     position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: var(--background-color);
+    top: 0;  /* Changed from 100% to 0 */
+    right: 3rem;  /* Position it right next to the hamburger */
+    background: #242424;
     flex-direction: column;
     padding: 1rem;
     gap: 1rem;
+    min-width: 200px;
+    border: 2px solid #646cff;
+    border-radius: 8px;
+    z-index: 1;
   }
 
   .nav-menu.open {
@@ -209,25 +274,25 @@ button:focus-visible {
 
 /* Page-specific background colors */
 section.about-me {
-  background-color: #48485098;
+  background: linear-gradient(135deg, #48485098 50%, #2a2a3098 100%);
   padding: 2rem;
   border-radius: 8px;
 }
 
 section.portfolio-section {
-  background-color: #171668a9;
+  background: linear-gradient(135deg, #02021dc4 50%, #1919c5bd 100%);
   padding: 2rem;
   border-radius: 8px;
 }
 
 section.contact-section {
-  background-color: #046cc2d5;
+  background: linear-gradient(135deg, #046cc2d5 50%, #022a4bb6 100%);
   padding: 2rem;
   border-radius: 8px;
 }
 
 section.resume-section {
-  background-color: #4faec4;
+  background: linear-gradient(135deg, #af2c04ea 50%, #740661ea 100%);
   padding: 2rem;
   border-radius: 8px;
 }
