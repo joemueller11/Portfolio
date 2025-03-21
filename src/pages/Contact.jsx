@@ -77,7 +77,7 @@ function Contact() {
   )
 
   return (
-    <section>
+    <section className="contact-section">
       <h2>Contact Me</h2>
       <form className="contact-form">
         <FormField 

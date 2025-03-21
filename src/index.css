@@ -206,3 +206,28 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* Page-specific background colors */
+section.about-me {
+  background-color: #2a4858;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+section.portfolio-section {
+  background-color: #2d545e;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+section.contact-section {
+  background-color: #1d3e53;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+section.resume-section {
+  background-color: #34626c;
+  padding: 2rem;
+  border-radius: 8px;
+}

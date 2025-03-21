@@ -48,7 +48,7 @@ function Portfolio() {
   ]
 
   return (
-    <section>
+    <section className="portfolio-section">
       <h2>PORTFOLIO</h2>
       <div className="projects">
         {projects.map((project, index) => (
